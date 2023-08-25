@@ -7,7 +7,7 @@
    onMount(async () => {
        let { data, error } = await supabase.from('editors').select('*')
        editors = data;
-       console.table(editors)
+    //    console.table(editors)
    })
  
 
