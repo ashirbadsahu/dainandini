@@ -18,9 +18,9 @@
 let updateEditor;
   updateEditor = async (editor) => {
     try {
-        const { data, error } = await supabase
+        const { data, error, user_id } = await supabase
   .from('editors')
-  .update({ note: editor.note })
+  .update({ note: editor.note, user_id})
   .eq('id', editor.id)
   .select()
     } catch (error) {
@@ -39,10 +39,10 @@ let updateEditor;
 <div>
     <input type="text" class = 'border-red-100 mx-10 p-1 border-r-2 outline-1'value={editor.note} on:input={(e) => {
         editor.note = e.currentTarget.value;
-        updateEditor(editor);
 
     }}>
-    
+    <br>
+    <button class="bg-red-700 text-xl p-1 rounded-lg m-2" on:click={updateEditor(editor)}> submit</button>
 </div>
 {:else}
  <p>No editors found</p>
