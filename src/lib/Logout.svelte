@@ -1,9 +1,11 @@
 <script>
     import supabase from "$lib/db";
+    import { goto } from "$app/navigation"
 
-    const logout = () => {
-        console.log("logout")
-        supabase.auth.signOut();
+    const logout = async () => { {
+       await supabase.auth.signOut();
+    }
+    goto('/login')
     }
 </script>
 <div class="my-15 text-center justify-center p-2">

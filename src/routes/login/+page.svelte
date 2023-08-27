@@ -1,12 +1,11 @@
 <script>
     import supabase from "$lib/db"
     import { goto } from "$app/navigation"
-    // import { users } from "$lib/stores";
     
     let email = "";
     let password = "";
     const signUp = async () => {
-        let { data:userDetails, error } = await supabase.auth.signUp({
+        let { data, error } = await supabase.auth.signUp({
             email: email,
             password: password,
         });
@@ -16,13 +15,10 @@
 
 
     const signIn = async () => {
-   let { data:userDetails, error } = await supabase.auth.signIn({
+   let { data, error } = await supabase.auth.signIn({
    email: email,
    password: password
     })
-    // if (userDetails) {
-    //     $users = userDetails;
-    //  }
     goto("/");
     };
 </script>
