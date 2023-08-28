@@ -3,7 +3,7 @@
     import Editor from "../lib/Editor.svelte";
     import { user } from "$lib/stores";
     import supabase from "$lib/db";
-    import Logout from "../lib/Logout.svelte";
+    import Components from '../lib/components.svelte';
   
     let isLoggedIn = false;
   
@@ -31,9 +31,8 @@
   
   {#if isLoggedIn}
     <Editor />
-  <Logout />
     <h4>Welcome {$user.email}</h4>
     {:else}
-    <a href="/login">dear user please login</a>
+    <Components />
   {/if}
   

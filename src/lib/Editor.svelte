@@ -2,6 +2,7 @@
     import { onMount } from "svelte";
     import supabase from "$lib/db";
     import { user } from "$lib/stores";
+    import Logout from "./Logout.svelte";
 
     user.set(supabase.auth.user());
         supabase.auth.onAuthStateChange((_, session) => {
@@ -9,7 +10,6 @@
     })
 
     let editors = [];
-    let showEditor = false;
     let newNote = '';
 
 
@@ -18,12 +18,6 @@
        let { data, error } = await supabase.from('editors').select('*')
        editors = data;
    })
-   console.log(`its the user id ${$user.id}`)
- 
-
-   function handleClick(){
-    showEditor = true;
-   }
 
    const deleteEditor = async (editor) => {
     const { error } = await supabase
@@ -60,27 +54,45 @@
 }
 
 </script>
-<div class="my-15 text-center justify-center p-2">
-    <button class="bg-red-700 text-xl p-2 rounded-lg " on:click={handleClick}>click here to see the table</button>
+ <!-- Navbar -->
+ <div>
+    <nav>
+        <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl p-4">
+            <a href="/" class="flex items-center">
+                <img src="https://svgshare.com/i/wzs.svg" class="h-12 mr-3" alt="Dainandini Logo" />
+            </a>
+            <div class="flex items-center">
+                <Logout />
+            </div>
+        </div>
+    </nav>
+
 </div>
 
-<div>
-    <button class="bg-red-700 text-2xl text-gray-400 p-2 rounded-lg m-2" on:click={() => insertEditor(editors)}>  Add a note </button>
+<div class="m-4 p-4">
+    <button class="text-2xl text-zinc-400 hover:underline px-2 py-0 border-white border-2 rounded-md bg-transparent" on:click={() => insertEditor(editors)}>  Add a note </button>
 </div>
  
 
 
 {#each editors as editor}
-<div>
-    
-    <input type="text" class = 'mb-2 border border-gray-200 mx-10'value={editor.note} on:input={(e) => {
+<div class="mx-8 space-y-4">
+    <div>
+    <textarea id="noteBox" rows="15" class="block p-2.5 w-2/3 text-sm text-white bg-transparent rounded-lg border border-white" placeholder="Write your notes here..." on:input={(e) => {
         editor.note = e.currentTarget.value;
 
-    }}>
-    <button class="bg-red-700 text-xl p-1 rounded-lg m-2 text-gray-400" on:click={() => deleteEditor(editor)}>Delete</button>
-    <br>
-    <button class="bg-red-700 text-xl p-1 rounded-lg m-2" on:click={() => updateEditor(editor)}> submit</button>
+    }}></textarea>
+</div>
+    <div class="flex flex-row justify-between w-2/3">
+        <div class="w-36 h-12 relative">
+        <div class="w-24 h-8 left-[3px] top-[4px] absolute bg-white rounded-lg"></div>
+         <button class="w-24 h-8 left-0 top-[1px] absolute bg-zinc-500 rounded-lg border-2 border-white text-white text-xl font-semibold font-['Oswald'] hover:bg-zinc-600" on:click={() => updateEditor(editor)}>Save</button>   
+        </div>
+    <button class="text-xl text my-[-2rem] text-zinc-400 hover:underline hover:border-white border- rounded-md bg-transparent" on:click={() => deleteEditor(editor)}>Delete</button>
+    </div>  
+
 </div>
 {:else}
  <p>No editors found</p>
 {/each}
+

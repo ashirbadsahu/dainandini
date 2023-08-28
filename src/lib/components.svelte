@@ -8,6 +8,7 @@
 
 </script>
 
+<!-- Navbar -->
 
 <div>
     <nav>
@@ -22,6 +23,7 @@
         </div>
     </nav>
 
+<!-- contents -->
 </div>
 <div class="flex flex-col min-h-screen justify-center items-center my-[-4rem]">
     <!-- Namaste -->
