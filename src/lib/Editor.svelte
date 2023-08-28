@@ -40,13 +40,15 @@
     }
    }
    
-    
+    let saved = false;
+
    const updateEditor = async (editor) => {
     try {
         const { data, error } = await supabase
             .from('editors')
             .update({ note: editor.note })
             .eq('id', editor.id)
+        saved = true;
     } catch (error) {
         console.log(error);
     }
@@ -82,8 +84,11 @@
     <div class="flex flex-row justify-between w-2/3">
         <div class="w-36 h-12 relative">
         <div class="w-24 h-8 left-[3px] top-[4px] max-md:w-20 absolute bg-white rounded-lg"></div>
-         <button class="w-24 h-8 left-0 top-[1px] max-md:w-20 absolute bg-zinc-500 rounded-lg border-2 border-white text-white text-xl font-semibold font-['Oswald'] hover:bg-zinc-600" on:click={() => updateEditor(editor)}>Save</button>   
+         <button class="w-24 h-8 left-0 top-[1px] max-md:w-20 absolute bg-zinc-500 rounded-lg border-2 border-white text-white text-xl font-semibold font-['Oswald'] hover:bg-zinc-600" on:click={() => updateEditor(editor)}>Save</button>  
         </div>
+        {#if saved}
+            <div class="text-2xl max-md:text-xl text-white">Saved 👍</div>
+        {/if}
     <button class="text-xl max-md:text-md text my-[-2rem] text-zinc-400 hover:underline hover:border-white border- rounded-md bg-transparent" on:click={() => deleteEditor(editor)}>Delete</button>
     </div>  
     <br>
