@@ -10,7 +10,7 @@
     })
 
 
-    
+
     let editors = [];
     let newNote = '';
    
@@ -47,7 +47,6 @@
             .from('editors')
             .update({ note: editor.note })
             .eq('id', editor.id)
-            .select('user_id');
     } catch (error) {
         console.log(error);
     }
@@ -73,14 +72,11 @@
     <button class="text-2xl text-zinc-400 hover:underline px-2 py-0 border-white border-2 rounded-md bg-transparent max-md:text-lg" on:click={() => insertEditor(editors)}>  Add a note </button>
 </div>
  
-
-
 {#each editors as editor}
 <div class="mx-8 max-md:mx-2 max-md:mr-[-4rem] space-y-4">
     <div>
-    <textarea id="noteBox" rows="15" class="block p-2.5 w-2/3 text-sm max-md:w-4/5 text-white bg-transparent rounded-lg border border-white" placeholder="Write your notes here..." on:input={(e) => {
+    <textarea id="noteBox" rows="15" class="block p-2.5 w-2/3 text-sm max-md:w-4/5 text-white bg-transparent rounded-lg border border-white" placeholder="Write your notes here..."bind:value={editor.note} on:input={(e) => {
         editor.note = e.currentTarget.value;
-
     }}></textarea>
 </div>
     <div class="flex flex-row justify-between w-2/3">

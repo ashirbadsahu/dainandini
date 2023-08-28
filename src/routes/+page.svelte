@@ -31,7 +31,6 @@
   
   {#if isLoggedIn}
     <Editor />
-    <h4>Welcome {$user.email}</h4>
     {:else}
     <Components />
   {/if}
