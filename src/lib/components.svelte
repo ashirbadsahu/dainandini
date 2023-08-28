@@ -14,10 +14,10 @@
     <nav>
         <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl p-4">
             <a href="/" class="flex items-center">
-                <img src="https://svgshare.com/i/wzs.svg" class="h-12 mr-3" alt="Dainandini Logo" />
+                <img src="https://svgshare.com/i/wzs.svg" class="h-12 mr-3 max-md:h-10" alt="Dainandini Logo" />
             </a>
             <div class="flex items-center">
-                <a href="/login" class="text-2xl  text-zinc-400 hover:underline px-2 py-0 hover:border-white border-2 rounded-md">Login</a>
+                <a href="/login" class="text-2xl max-md:text-xl text-zinc-400 hover:underline px-2 py-0 hover:border-white border-2 rounded-md">Login</a>
 
             </div>
         </div>
@@ -42,7 +42,7 @@
 </div>
 <!-- Bottom styled text -->
 <div class="flex justify-center my-[-6rem]">
-    <div class=" mx-6 origin-top-left rotate-[-4.36deg] opacity-10 text-zinc-400 text-md font-normal underline font-['Open Sans'] max-md:text-sm">Today was a whirlwind of gears and circuits! My day started with a double shot of espresso and a determined mindset to conquer the world of engineering. The morning lecture on quantum mechanics left my brain feeling both electrified and bewildered – Schrödinger's cat definitely has more than nine lives in my mind right now. The highlight of the day was the lab session where we dabbled in soldering components onto a PCB.<br/><br/>My shaky hands turned a simple LED circuit into a modern art masterpiece, but hey, it lit up! In the midst of it all, I found a new appreciation for my calculator – it's become my sidekick in this battle against complex equations. As the sun set, I retreated to my fortress of textbooks and online resources, ready to dive into the mysteries of thermodynamics. I'll conquer these subjects one equation at a time, just you wait.</div>
+    <div class=" mx-6 origin-top-left rotate-[-4.36deg] opacity-20 text-zinc-400 text-md font-normal underline font-['Open Sans'] max-md:text-sm">Today was a whirlwind of gears and circuits! My day started with a double shot of espresso and a determined mindset to conquer the world of engineering. The morning lecture on quantum mechanics left my brain feeling both electrified and bewildered – Schrödinger's cat definitely has more than nine lives in my mind right now. The highlight of the day was the lab session where we dabbled in soldering components onto a PCB.<br/><br/>My shaky hands turned a simple LED circuit into a modern art masterpiece, but hey, it lit up! In the midst of it all, I found a new appreciation for my calculator – it's become my sidekick in this battle against complex equations. As the sun set, I retreated to my fortress of textbooks and online resources, ready to dive into the mysteries of thermodynamics. I'll conquer these subjects one equation at a time, just you wait.</div>
 </div>
 
 <!-- Footer text -->
