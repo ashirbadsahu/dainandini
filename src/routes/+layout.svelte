@@ -2,6 +2,11 @@
     import "../app.css";
   </script>
   <slot />
+  <div class="flex justify-center text-center">
+    <footer class="text-lg text-white">Made with ❤️ by Ashish</footer>
+  </div>
+
+
   <!-- Font Oswald -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

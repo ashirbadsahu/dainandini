@@ -5,7 +5,7 @@
     const logout = async () => { {
        await supabase.auth.signOut();
     }
-    goto('/login')
+    goto('/')
     }
 </script>
 
