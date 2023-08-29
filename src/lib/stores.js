@@ -1,5 +1,5 @@
 // // place files you want to import through the `$lib` alias in this folder.
- import { writable } from "svelte/store";
+import { writable } from "svelte/store";
 
 // // Create the writable store
- export const user = writable(false);
+export const user = writable(false);
