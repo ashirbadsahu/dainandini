@@ -99,4 +99,3 @@
 {:else}
  <p>No editors found</p>
 {/each}
-
