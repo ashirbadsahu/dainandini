@@ -2,7 +2,7 @@
 
 It's a notetaking app.
 
-# Techstack
+## Techstack
 
     👉 Sveltekit-4
     👉 Tailwind CSS

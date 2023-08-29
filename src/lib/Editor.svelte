@@ -49,6 +49,9 @@
             .update({ note: editor.note })
             .eq('id', editor.id)
         saved = true;
+        setTimeout(() => {
+                saved = false;
+            }, 4000);
     } catch (error) {
         console.log(error);
     }
@@ -87,7 +90,7 @@
          <button class="w-24 h-8 left-0 top-[1px] max-md:w-20 absolute bg-zinc-500 rounded-lg border-2 border-white text-white text-xl font-semibold font-['Oswald'] hover:bg-zinc-600" on:click={() => updateEditor(editor)}>Save</button>  
         </div>
         {#if saved}
-            <div class="text-2xl max-md:text-xl text-white">Saved 👍</div>
+            <div class="text-2xl max-md:text-lg text-white">Saved 👍</div>
         {/if}
     <button class="text-xl max-md:text-md text my-[-2rem] text-zinc-400 hover:underline hover:border-white border- rounded-md bg-transparent" on:click={() => deleteEditor(editor)}>Delete</button>
     </div>  
