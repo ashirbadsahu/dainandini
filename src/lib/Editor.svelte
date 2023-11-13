@@ -25,20 +25,21 @@
     location.reload();
   };
 
-  const insertEditor = async (editors) => {
-    try {
-        const { data, error } = await supabase
-            .from('editors')
-            .update({ note: editor.note })
-            .eq('id', editor.id)
-        saved = true;
-        setTimeout(() => {
-                saved = false;
-            }, 4000);
-    } catch (error) {
+  const insertEditor = async () => {
+  try {
+    const { data, error } = await supabase
+      .from('editors')
+      .insert([{ note: newNote }]);
+    if (error) {
       console.log(error);
+    } else {
+      editors = [...editors, ...data];
+      newNote = '';
     }
-  };
+  } catch (error) {
+    console.log(error);
+  }
+};
 
   let saved = false;
 
@@ -80,11 +81,11 @@
 
 <div class="m-4 max-md:m-0 p-4">
   <button
-    class="text-2xl text-zinc-400 hover:underline px-2 py-0 border-white border-2 rounded-md bg-transparent max-md:text-lg"
-    on:click={() => insertEditor(editors)}
-  >
-    Add a note
-  </button>
+  class="text-2xl text-zinc-400 hover:underline px-2 py-0 border-white border-2 rounded-md bg-transparent max-md:text-lg"
+  on:click={insertEditor}
+>
+  Add a note
+</button>
 </div>
  
 {#each editors as editor}
