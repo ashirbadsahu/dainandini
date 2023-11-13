@@ -19,6 +19,13 @@
     });
     goto("/");
   };
+
+  //key bindings
+  const onKeyDown = (e) =>{
+    if(e.key === "Enter"){
+      signIn();
+    }
+  }
 </script>
 
 <!-- nav bar -->
@@ -50,7 +57,7 @@
           bind:value={email}
           placeholder=" enter email here"
           class="mb-2 border-b-2 border-gray-200 text-gray-300 bg-transparent outline-none"
-        />
+       on:keydown={onKeyDown} />
       </label>
       <br /><br />
       <!-- password input field -->
@@ -61,7 +68,7 @@
           bind:value={password}
           placeholder=" enter password here"
           class="mb-2 border-b-2 border-gray-200 text-gray-300 bg-transparent outline-none"
-        />
+       on:keydown={onKeyDown} />
       </label><br /><br />
       {#if password.length < 8}
         <p class="text-white">Password must be 8 characters long</p>

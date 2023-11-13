@@ -27,7 +27,6 @@
 
   const insertEditor = async (editors) => {
     try {
-<<<<<<< HEAD
         const { data, error } = await supabase
             .from('editors')
             .update({ note: editor.note })
@@ -36,14 +35,6 @@
         setTimeout(() => {
                 saved = false;
             }, 4000);
-=======
-      const { data, error } = await supabase
-        .from("editors")
-        .insert([{ note: newNote, user_id: $user.id }])
-        .select();
-      newNote = "";
-      location.reload();
->>>>>>> f9461de180bf1972f3598184edf30c2142ca385c
     } catch (error) {
       console.log(error);
     }
@@ -95,7 +86,6 @@
     Add a note
   </button>
 </div>
-<<<<<<< HEAD
  
 {#each editors as editor}
 <div class="mx-8 max-md:mx-2 max-md:mr-[-4rem] space-y-4">
@@ -118,43 +108,4 @@
 </div>
 {:else}
  <p>No editors found</p>
-=======
-
-{#each editors as editor}
-  <div class="mx-8 max-md:mx-2 max-md:mr-[-4rem] space-y-4">
-    <div>
-      <textarea
-        id="noteBox"
-        rows="15"
-        class="block p-2.5 w-2/3 text-sm max-md:w-4/5 text-white bg-transparent rounded-lg border border-white"
-        placeholder="Write your notes here..."
-        bind:value={editor.note}
-        on:input={(e) => {
-          editor.note = e.currentTarget.value;
-        }}
-      ></textarea>
-    </div>
-    <div class="flex flex-row justify-between w-2/3">
-      <div class="w-36 h-12 relative">
-        <div
-          class="w-24 h-8 left-[3px] top-[4px] max-md:w-20 absolute bg-white rounded-lg"
-        ></div>
-        <button
-          class="w-24 h-8 left-0 top-[1px] max-md:w-20 absolute bg-zinc-500 rounded-lg border-2 border-white text-white text-xl font-semibold font-['Oswald'] hover:bg-zinc-600"
-          on:click={() => updateEditor(editor)}>Save</button
-        >
-      </div>
-      {#if saved}
-        <div class="text-2xl max-md:text-xl text-white">Saved 👍</div>
-      {/if}
-      <button
-        class="text-xl max-md:text-md text my-[-2rem] text-zinc-400 hover:underline hover:border-white border- rounded-md bg-transparent"
-        on:click={() => deleteEditor(editor)}>Delete</button
-      >
-    </div>
-    <br />
-  </div>
-{:else}
-  <p>No editors found</p>
->>>>>>> f9461de180bf1972f3598184edf30c2142ca385c
 {/each}

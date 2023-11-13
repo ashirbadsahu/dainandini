@@ -58,13 +58,6 @@
   </div>
   <br />
 
-<<<<<<< HEAD
-    <!-- GET STARTED button -->
-    <div class="w-60 h-16 max-md:w-40 max-md:h-12 relative">
-        <div class="w-40 h-12 max-md:w-32 max-md:h-9 left-[3px] top-[4px] absolute bg-white rounded-lg"></div>
-        <button class="w-40 h-12 left-0 top-[1px] max-md:w-32 max-md:h-9 absolute bg-zinc-500 rounded-lg border-2 border-white text-white text-2xl font-semibold font-['Oswald'] hover:bg-zinc-600 max-md:text-xl transition hover:scale-110 hover:duration-150 ease-in-out" on:click={() => handleGetStarted()}>GET STARTED</button>
-      </div>
-=======
   <!-- GET STARTED button -->
   <div class="w-60 h-16 max-md:w-40 max-md:h-12 relative">
     <div
@@ -75,7 +68,6 @@
       on:click={() => handleGetStarted()}>GET STARTED</button
     >
   </div>
->>>>>>> f9461de180bf1972f3598184edf30c2142ca385c
 </div>
 <!-- Bottom styled text -->
 <div class="flex justify-center my-[-6rem]">

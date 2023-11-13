@@ -1,5 +1,4 @@
 <script>
-<<<<<<< HEAD
     import "../app.css";
     import { dev } from '$app/environment';
     import { inject } from '@vercel/analytics';
@@ -9,18 +8,6 @@
   <div class="flex justify-center text-center">
     <footer class="text-lg text-white">Made with ❤️ by Ashish</footer>
   </div>
-=======
-  import "../app.css";
-  import { dev } from "$app/environment";
-  import { inject } from "@vercel/analytics";
-  inject({ mode: dev ? "development" : "production" });
-</script>
->>>>>>> f9461de180bf1972f3598184edf30c2142ca385c
-
-<slot />
-<div class="flex justify-center text-center">
-  <footer class="text-lg text-white">Made with ❤️ by Ashish</footer>
-</div>
 
 <!-- Font Oswald -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
